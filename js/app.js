@@ -368,14 +368,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   button.innerHTML = "Open pages list";
   button.className = "helper-nav-button";
   nav.className = "helper-nav";
-  style.innerHTML = ".helper-nav a:hover {\n      color:#fff;\n      background-color:#000;\n    } \n    .helper-nav a {\n      display:block;\n      color: #000;\n      padding: 3px;\n      margin:0\n    }\n    .helper-nav-button {\n      background: #000;\n      color: #fff;\n      padding: 5px;\n      font-weight: 300;\n      font-size: 12px;\n      border: none;\n      border-radius: 3px 0 0 0;\n      cursor: pointer;\n    }\n    .helper-nav-wrapper {\n      position: fixed;\n      bottom: 0;\n      right: 0;\n      font-family: monospace;\n      z-index: 9999;\n      text-align: right;\n      font-size: 14px;\n    }\n    .helper-nav {\n      text-align: left;\n      background-color: #fff;\n      border: 1px solid #000;\n      padding: 3px;\n      boxShadow: 0 0 40px 0 rgba(0,0,0,.2);\n      max-height: 300px;\n      overflow-y: auto;\n    }\n    @media all and (max-width:1024px) {\n      .helper-nav {\n        height: 160px;\n        overflow-y: scroll;\n      }\n    }";
+  style.innerHTML = ".helper-nav a:hover {\n      color:#fff;\n      background-color:#000;\n    }\n    .helper-nav a {\n      display:block;\n      color: #000;\n      padding: 3px;\n      margin:0\n    }\n    .helper-nav-button {\n      background: #000;\n      color: #fff;\n      padding: 5px;\n      font-weight: 300;\n      font-size: 12px;\n      border: none;\n      border-radius: 3px 0 0 0;\n      cursor: pointer;\n    }\n    .helper-nav-wrapper {\n      position: fixed;\n      bottom: 0;\n      right: 0;\n      font-family: monospace;\n      z-index: 9999;\n      text-align: right;\n      font-size: 14px;\n    }\n    .helper-nav {\n      text-align: left;\n      background-color: #fff;\n      border: 1px solid #000;\n      padding: 3px;\n      boxShadow: 0 0 40px 0 rgba(0,0,0,.2);\n      max-height: 300px;\n      overflow-y: auto;\n    }\n    @media all and (max-width:1024px) {\n      .helper-nav {\n        height: 160px;\n        overflow-y: scroll;\n      }\n    }";
   document.head.appendChild(style);
   if (_files2.default.length <= 2) {
     return;
   }
 
   for (var i = 1; i < _files2.default.length; i++) {
-    nav.innerHTML += "<a href=\"/" + _files2.default[i] + "\">" + i + "-" + _files2.default[i] + "</a>";
+    nav.innerHTML += "<a href=\"/toonhub/" + _files2.default[i] + "\">" + i + "-" + _files2.default[i] + "</a>";
   }
   document.body.appendChild(wrapper);
   var flag = localStorage.getItem("flag") ? JSON.parse(localStorage.getItem("flag")) : false;
@@ -413,7 +413,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = ["dev", "account-password.html", "account.html", "category.html", "comics-view.html", "contacts.html", "faq.html", "forgot.html", "home.html", "index.html", "privacy.html", "terms.html"];
+exports.default = ["dev", "account-password.html", "account.html", "category.html", "comics-view.html", "contacts.html", "faq.html", "forgot.html", "home.html", "index.html", "popup.html", "privacy.html", "terms.html"];
 
 /***/ })
 /******/ ]);
