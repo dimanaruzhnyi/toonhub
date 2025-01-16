@@ -923,7 +923,7 @@ template {
       font-size: 14px; } }
 
 @media (max-width: 767px) {
-  section:not(.no-padding).comic-general {
+  .section:not(.no-padding).comic-general {
     padding: 0; } }
 
 @media (max-width: 767px) {
@@ -931,7 +931,8 @@ template {
     padding: 0; } }
 
 .comic-general__top {
-  margin: 20px 0 28px; }
+  margin: 20px 0 28px;
+  position: relative; }
   @media (max-width: 767px) {
     .comic-general__top {
       margin: 0 0 28px; } }
@@ -1178,13 +1179,16 @@ template {
     max-width: 110px;
     -ms-flex-negative: 0;
     flex-shrink: 0; }
+  .comic-list-sidebar div.comics .comic-title,
   .comic-list-sidebar article.comics .comic-title {
     font-weight: 400;
     margin-bottom: 15px; }
     @media (max-width: 767px) {
+      .comic-list-sidebar div.comics .comic-title,
       .comic-list-sidebar article.comics .comic-title {
         font-size: 12px;
         margin-bottom: 5px; } }
+  .comic-list-sidebar div.comics .comic-descr,
   .comic-list-sidebar article.comics .comic-descr {
     overflow: hidden;
     color: #010101;
@@ -1196,6 +1200,7 @@ template {
     font-weight: 400;
     line-height: 140%; }
     @media (max-width: 767px) {
+      .comic-list-sidebar div.comics .comic-descr,
       .comic-list-sidebar article.comics .comic-descr {
         font-size: 10px; } }
 
@@ -1257,7 +1262,8 @@ template {
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 140%; }
+  line-height: 140%;
+  margin: 0; }
 
 .comic-list-head {
   display: -webkit-box;
@@ -1405,15 +1411,18 @@ template {
     .comics-add-box .comic-archive-item {
       max-width: 32%; } }
 
+.comics-add-box div.comics .comic-thumbnail .views,
 .comics-add-box article.comics .comic-thumbnail .views {
   font-size: 10px;
   line-height: 140%;
   font-weight: 400;
   padding: 0 0 4px 4px; }
 
+.comics-add-box div.comics .comic-thumbnail .views > span,
 .comics-add-box article.comics .comic-thumbnail .views > span {
   padding: 2px 4px; }
 
+.comics-add-box div.comics .comic-thumbnail .episodes,
 .comics-add-box article.comics .comic-thumbnail .episodes {
   font-size: 10px;
   font-weight: 500;
@@ -1422,6 +1431,7 @@ template {
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px); }
 
+.comics-add-box div.comics .comic-thumbnail .label.adult,
 .comics-add-box article.comics .comic-thumbnail .label.adult {
   font-size: 10px;
   padding: 3px 4.5px; }
@@ -1928,7 +1938,8 @@ template {
   font-weight: 400;
   line-height: 140%;
   cursor: pointer;
-  position: relative; }
+  position: relative;
+  margin: 0; }
 
 .faq-question::after {
   border-bottom: 1px solid #010101;
@@ -2311,15 +2322,15 @@ main {
     #page-title h1 {
       font-size: 24px; } }
 
-section {
+.section {
   overflow: hidden; }
-  section .container {
+  .section .container {
     position: relative;
     padding: 0;
     max-width: 1110px; }
-  section.dark {
+  .section.dark {
     color: #fff; }
-  section .section-head {
+  .section-head {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2331,11 +2342,11 @@ section {
     align-items: center;
     margin: 0 0 20px; }
     @media (max-width: 767px) {
-      section .section-head {
+      .section-head {
         margin: 0 0 8px; } }
-    section .section-head h2 {
+    .section-head h2 {
       margin: 0; }
-    section .section-head a {
+    .section-head a {
       color: #4c4c4c;
       display: -webkit-box;
       display: -ms-flexbox;
@@ -2349,45 +2360,45 @@ section {
       gap: 5px;
       font-size: 14px; }
       @media (min-width: 768px) {
-        section .section-head a {
+        .section-head a {
           font-size: 16px; } }
-  section .section-title {
+  .section-title {
     font-size: 20px; }
     @media (min-width: 768px) {
-      section .section-title {
+      .section-title {
         font-size: 28px; } }
-  section.text.disclaimer {
+  .section.text.disclaimer {
     margin: 20px 0 60px;
     color: #010101;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 150%; }
-    section.text.disclaimer:last-child {
+    .section.text.disclaimer:last-child {
       margin: 0; }
     @media (max-width: 767px) {
-      section.text.disclaimer {
+      .section.text.disclaimer {
         font-size: 14px; } }
-  section.text h2,
-  section.text h3,
-  section.text h4,
-  section.text h5,
-  section.text h6 {
+  .section.text h2,
+  .section.text h3,
+  .section.text h4,
+  .section.text h5,
+  .section.text h6 {
     margin: 24px 0 8px; }
-    section.text h2:first-child,
-    section.text h3:first-child,
-    section.text h4:first-child,
-    section.text h5:first-child,
-    section.text h6:first-child {
+    .section.text h2:first-child,
+    .section.text h3:first-child,
+    .section.text h4:first-child,
+    .section.text h5:first-child,
+    .section.text h6:first-child {
       margin-top: 0; }
-  section.text ul {
+  .section.text ul {
     margin: 8px 0 24px;
     padding: 0;
     list-style: none; }
-    section.text ul li {
+    .section.text ul li {
       position: relative;
       padding-left: 12px; }
-      section.text ul li::after {
+      .section.text ul li::after {
         content: '';
         position: absolute;
         left: 0;
@@ -2396,13 +2407,13 @@ section {
         height: 4px;
         background: #010101;
         border-radius: 50%; }
-  section.comics .slick-slide {
+  .section.comics .slick-slide {
     margin: 0 8px; }
-    section.comics .slick-slider {
+    .section.comics .slick-slider {
       margin: 0 -8px; }
-    section.comics .slick-slide > div:not(:last-of-type) {
+    .section.comics .slick-slide > div:not(:last-of-type) {
       margin-bottom: 18px; }
-  section.comics .slick-arrow {
+  .section.comics .slick-arrow {
     width: 42px;
     height: 42px;
     padding: 0;
@@ -2421,15 +2432,15 @@ section {
     position: absolute;
     top: calc(50% - 21px);
     cursor: pointer; }
-    section.comics .slick-arrow:hover, section.comics .slick-arrow:focus {
+    .section.comics .slick-arrow:hover, .section.comics .slick-arrow:focus {
       background: #FEEC49;
       outline: unset; }
-    section.comics .slick-arrow.slick-prev {
+    .section.comics .slick-arrow.slick-prev {
       left: -75px; }
-    section.comics .slick-arrow.slick-next {
+    .section.comics .slick-arrow.slick-next {
       right: -75px; }
 
-section:not(.no-padding),
+.section:not(.no-padding),
 aside {
   padding: 0 16px; }
 
@@ -2446,7 +2457,7 @@ aside {
     @media (max-width: 767px) {
       .comics-grid.double-line {
         display: grid;
-        grid-template-rows: repeat(2, 260px);
+        grid-template-rows: repeat(2, 251px);
         grid-auto-flow: column;
         overflow-x: auto; }
         .comics-grid.double-line::-webkit-scrollbar {
@@ -2459,7 +2470,7 @@ aside {
         .comics-grid.double-line::-webkit-scrollbar-track {
           background-color: #f3f4f6;
           border-radius: 4px; } }
-    .comics-grid.double-line article {
+    .comics-grid.double-line .comics {
       min-width: 128px; }
   @media (max-width: 1023px) {
     .comics-grid {
@@ -2469,7 +2480,7 @@ aside {
     .comics-grid {
       gap: 16px 12px; } }
   @media all and (min-width: 768px) {
-    .comics-grid article {
+    .comics-grid .comics {
       min-width: initial; } }
 
 .modal {
@@ -2697,25 +2708,36 @@ aside {
 .eye-2 {
   display: none; }
 
+div.comics,
 article.comics {
   border-radius: 12px;
   position: relative; }
+  div.comics .comic-thumbnail,
   article.comics .comic-thumbnail {
     min-height: 148px;
     position: relative;
     overflow: hidden;
     border-radius: 12px; }
+    div.comics .comic-thumbnail .labels,
+    div.comics .comic-thumbnail .episodes,
+    div.comics .comic-thumbnail .views,
     article.comics .comic-thumbnail .labels,
     article.comics .comic-thumbnail .episodes,
     article.comics .comic-thumbnail .views {
       position: absolute;
       z-index: 1; }
+    div.comics .comic-thumbnail .views,
+    div.comics .comic-thumbnail .labels,
     article.comics .comic-thumbnail .views,
     article.comics .comic-thumbnail .labels {
       padding: 4px; }
+    div.comics .comic-thumbnail .views,
+    div.comics .comic-thumbnail .episodes,
     article.comics .comic-thumbnail .views,
     article.comics .comic-thumbnail .episodes {
       bottom: 0; }
+    div.comics .comic-thumbnail .episodes,
+    div.comics .comic-thumbnail .views > span,
     article.comics .comic-thumbnail .episodes,
     article.comics .comic-thumbnail .views > span {
       padding: 3px 6px;
@@ -2723,6 +2745,7 @@ article.comics {
       display: -ms-inline-flexbox;
       display: inline-flex;
       background: rgba(1, 1, 1, 0.3); }
+    div.comics .comic-thumbnail .label,
     article.comics .comic-thumbnail .label {
       color: #fff;
       padding: 4px;
@@ -2730,6 +2753,7 @@ article.comics {
       line-height: 1;
       font-weight: 500;
       border-radius: 30px; }
+      div.comics .comic-thumbnail .labels,
       article.comics .comic-thumbnail .labels {
         top: 0;
         left: 0;
@@ -2740,16 +2764,20 @@ article.comics {
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center; }
+      div.comics .comic-thumbnail .label.adult,
       article.comics .comic-thumbnail .label.adult {
         background: -webkit-gradient(linear, left top, right top, color-stop(3%, #F44043), color-stop(95%, #C70028));
         background: linear-gradient(to right, #F44043 3%, #C70028 95%);
         padding: 5px 7.5px;
         font-size: 12px; }
+      div.comics .comic-thumbnail .label.end,
       article.comics .comic-thumbnail .label.end {
         background: -webkit-gradient(linear, left top, right top, color-stop(3%, #9CA2FF), color-stop(95%, #6F75A4));
         background: linear-gradient(to right, #9CA2FF 3%, #6F75A4 95%); }
+    div.comics .comic-thumbnail .views,
     article.comics .comic-thumbnail .views {
       left: 0; }
+      div.comics .comic-thumbnail .views > span,
       article.comics .comic-thumbnail .views > span {
         color: #fff;
         border-radius: 10px;
@@ -2759,11 +2787,13 @@ article.comics {
         align-items: center;
         gap: 2px;
         font-size: 12px; }
+    div.comics .comic-thumbnail .episodes,
     article.comics .comic-thumbnail .episodes {
       right: 0;
       color: #FEEC49;
       border-radius: 10px 0;
       font-size: 12px; }
+    div.comics .comic-thumbnail img,
     article.comics .comic-thumbnail img {
       width: 100%;
       height: 100%;
@@ -2775,9 +2805,11 @@ article.comics {
       -webkit-transition: all .25s ease-in-out;
       transition: all .25s ease-in-out;
       z-index: 0; }
+    div.comics .comic-thumbnail:hover img,
     article.comics .comic-thumbnail:hover img {
       -webkit-transform: scale(1.1);
       transform: scale(1.1); }
+  div.comics .comic-title,
   article.comics .comic-title {
     color: #010101;
     font-weight: 500;
@@ -2791,13 +2823,16 @@ article.comics {
     display: -webkit-box;
     -webkit-box-orient: vertical; }
     @media (max-width: 767px) {
+      div.comics .comic-title,
       article.comics .comic-title {
         font-size: 12px;
         font-weight: 500;
         line-height: 130%;
         height: 32px; } }
+  div.comics .comic-content,
   article.comics .comic-content {
     padding: 6px 0 0; }
+  div.comics .comic-genre,
   article.comics .comic-genre {
     font-size: 12px;
     font-weight: 500;
@@ -2805,15 +2840,18 @@ article.comics {
     line-height: 150%;
     padding-bottom: 2px; }
     @media (max-width: 767px) {
+      div.comics .comic-genre,
       article.comics .comic-genre {
         font-size: 10px;
         line-height: 140%; } }
 
+div.banner,
 article.banner {
   min-height: 300px;
   border-radius: 20px;
   font-size: 14px;
   line-height: 20px; }
+  div.banner .content,
   article.banner .content {
     padding: 22px 16px 13px;
     position: absolute;
@@ -2829,18 +2867,22 @@ article.banner {
     -ms-flex-direction: column;
     flex-direction: column;
     gap: 16px; }
+    div.banner .content.center,
     article.banner .content.center {
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center; }
+    div.banner .content.bottom,
     article.banner .content.bottom {
       -webkit-box-pack: end;
       -ms-flex-pack: end;
       justify-content: flex-end; }
+    div.banner .content.between,
     article.banner .content.between {
       -webkit-box-pack: justify;
       -ms-flex-pack: justify;
       justify-content: space-between; }
+  div.banner img,
   article.banner img {
     border-radius: 20px;
     width: 100%; }
@@ -2947,6 +2989,9 @@ article.banner {
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin-bottom: 24px; }
+  @media all and (max-width: 767px) {
+    .comics-sorting__wrapper {
+      margin-bottom: 10px; } }
 
 .comics-grid {
   margin-bottom: 24px; }
@@ -3040,7 +3085,8 @@ article.banner {
     color: #4c4c4c;
     font-size: 14px;
     font-weight: 400;
-    line-height: 140%; }
+    line-height: 140%;
+    margin: 0; }
 
 .all-comics .genres {
   margin-bottom: 22px; }
@@ -3426,18 +3472,18 @@ article.banner {
 .home main {
   padding-top: 66px; }
 
-.home section {
+.home .section {
   margin-bottom: 54px; }
   @media (max-width: 767px) {
-    .home section {
+    .home .section {
       margin-bottom: 36px; } }
-  .home section.section-slider {
+  .home .section.section-slider {
     margin-bottom: 4px; }
     @media (max-width: 767px) {
-      .home section.section-slider {
+      .home .section.section-slider {
         margin-bottom: 20px;
         padding-left: 16px; } }
-  .home section h2.section-title {
+  .home .section h2.section-title {
     line-height: 150%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3445,16 +3491,20 @@ article.banner {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center; }
-    .home section h2.section-title svg {
+    .home .section h2.section-title svg {
       margin-right: 10px; }
-    .home section h2.section-title sub {
+    .home .section h2.section-title sub {
       font-size: 16px;
       font-weight: 400;
       line-height: 140%;
       margin-left: 6px; }
-  .home section#discount-40 h2 {
+      @media (max-width: 767px) {
+        .home .section h2.section-title sub {
+          font-size: 14px;
+          bottom: -1px; } }
+  .home .section#discount-40 h2 {
     text-transform: uppercase; }
-  .home section#discount-40 .button {
+  .home .section#discount-40 .button {
     width: 100%;
     max-width: 216px;
     -ms-flex-item-align: center;
@@ -3463,7 +3513,7 @@ article.banner {
     -ms-flex-pack: center;
     justify-content: center;
     padding: 10px 16px; }
-  .home section#exclusive-titles h5 {
+  .home .section#exclusive-titles h5 {
     margin: 0; }
 
 .loadmore {

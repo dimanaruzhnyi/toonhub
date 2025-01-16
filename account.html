@@ -66,12 +66,12 @@
 </header>
 
   <main id="primary">
-    <section id="page-title" class="section page-title">
+    <div id="page-title" class="section page-title">
       <div class="container">
         <h1>Profile</h1>
       </div>
-    </section>
-    <section class="section container">
+    </div>
+    <div class="section container">
       <div class="account-holder">
         <aside class="account-holder__aside">
           <nav class="account-holder__aside-nav">
@@ -172,7 +172,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </main>
   <script>
     const navLinks = document.querySelectorAll('.account-holder__aside-nav li');
@@ -198,7 +198,7 @@
     function isMobile() {
         return /Android|iPhone|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
     }
-        
+
     if (isMobile()) {
         const tab1 = document.getElementById('tab-1');
         if (tab1) {
