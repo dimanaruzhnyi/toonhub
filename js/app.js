@@ -376,7 +376,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
   for (var i = 1; i < _files2.default.length; i++) {
     // nav.innerHTML += `<a href="/toonhub/${files[i]}">${i}-${files[i]}</a>`;
-    nav.innerHTML += "<a href=\"/" + _files2.default[i] + "\">" + i + "-" + _files2.default[i] + "</a>";
+    nav.innerHTML += "<a href=\"/toonhub/" + _files2.default[i] + "\">" + i + "-" + _files2.default[i] + "</a>";
   }
   document.body.appendChild(wrapper);
   var flag = localStorage.getItem("flag") ? JSON.parse(localStorage.getItem("flag")) : false;
