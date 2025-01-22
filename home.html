@@ -965,16 +965,17 @@
 <script type="text/javascript" src="js/main.min.js" id="main-js"></script>
 <script type="text/javascript">
   jQuery('.slider').on('wheel', function (e) {
-            // Проверка: определить тачпад по плавности скроллинга
-            const deltaY = e.originalEvent.deltaY;
+            const deltaX = e.originalEvent.deltaX; // Горизонтальное движение
+            const deltaY = e.originalEvent.deltaY; // Вертикальное движение
 
-            // Игнорировать мышь (обычно значения deltaY больше 100)
-            if (Math.abs(deltaY) < 100) {
+            // Проверяем, чтобы движение было преимущественно горизонтальным
+            if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) < 100) {
                 e.preventDefault();
-                if (deltaY < 0) {
-                    $(this).slick('slickPrev'); // Прокрутка вверх
+
+                if (deltaX < 0) {
+                    jQuery(this).slick('slickPrev'); // Прокрутка влево
                 } else {
-                    $(this).slick('slickNext'); // Прокрутка вниз
+                    jQuery(this).slick('slickNext'); // Прокрутка вправо
                 }
             }
         });
