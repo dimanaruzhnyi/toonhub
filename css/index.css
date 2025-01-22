@@ -2464,7 +2464,8 @@ main {
     line-height: 150%;
     font-family: 'Manrope'; }
     .section.text.disclaimer:last-child {
-      margin: 0; }
+      margin: 0;
+      padding-bottom: 20px; }
     @media (max-width: 767px) {
       .section.text.disclaimer {
         font-size: 14px; } }
@@ -2481,6 +2482,22 @@ main {
     .section.text h5:first-child,
     .section.text h6:first-child {
       margin-top: 0; }
+  .section.text h2,
+  .section.text h3 {
+    font-size: 28px; }
+    @media (max-width: 767px) {
+      .section.text h2,
+      .section.text h3 {
+        font-size: 20px; } }
+  .section.text h4,
+  .section.text h5,
+  .section.text h6 {
+    font-size: 20px; }
+    @media (max-width: 767px) {
+      .section.text h4,
+      .section.text h5,
+      .section.text h6 {
+        font-size: 16px; } }
   .section.text ol li + li {
     margin-top: 7px; }
   .section.text ul {
@@ -3081,6 +3098,7 @@ article.comics {
     font-weight: 500;
     margin: 0;
     font-size: 14px;
+    line-height: 130%;
     height: 34px;
     overflow: hidden;
     text-overflow: ellipsis;

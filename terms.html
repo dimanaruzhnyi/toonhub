@@ -74,7 +74,7 @@
         <i class="d-block mb-12">These Terms ware last updated on August 08, 2022.</i>
         <br>
         <br>
-        <h2>INTRODUCTION</h2>
+        <h2>Introduction</h2>
 
         <p>Welcome to Toonhub.com (the "Site"), a service offered by Honeytech Ltd and Honeytech HK Limited, its subsidiaries,
             divisions and any affiliated entities.
@@ -89,7 +89,7 @@
         <p>By using this Site, creating an account and checking the "I agree" (or similar) box, or otherwise
             accessing or using our Service you are agreeing to abide by these Terms in full.</p>
 <br>
-        <h2>TERMS AND DEFINITIONS</h2>
+        <h2>Terms and Definiyions</h2>
 
         <ul>
             <li>"Toonhub", "we", "us", and/or "our" means Honeytech Ltd, legal entity established under the law of Cyprus,
@@ -108,7 +108,7 @@
             <li>“Products” mean digital content accessible via this Site.</li>
         </ul>
 <br>
-        <h2>OUR SERVICE</h2>
+        <h2>Our Service</h2>
 
         <p>We provide an online platform that allows Users to get access to digital entertainment content (i.e.
             digital comics). This Platform allows you to buy limited licenses to the Products as set forth
@@ -139,13 +139,13 @@
             discontinue the Service to any User for any reason. You agree that we will not be liable to you or
             to any third party for any modification, suspension, refusal or discontinuation of the Service.</p>
 <br>
-        <h2>ELIGIBILITY</h2>
+        <h2>Eligibity</h2>
 
         <p>You must be at least 13 years old to use this Site. By using the Site you warrant and represent that
             you are or over 13 years old. The Site’s use by minors and those who try to conceal the real age is
             forbidden and considered to be the violation of the Terms.</p>
 <br>
-        <h2>USER CONTENT</h2>
+        <h2>User content</h2>
 
         <p>This Site may enable you to submit, upload, post, display, communicate or otherwise publish content,
             such as profile information, screenshots, comments, third party URL links, and other materials of
@@ -183,7 +183,7 @@
             to assert any and all moral rights, or to support, maintain, or permit any action based on any moral
             rights that you may have in or with respect to any User Content you submitted.</p>
 <br>
-        <h2>USE RESTRICTIONS</h2>
+        <h2>Use restrictions</h2>
 
         <p>When using our Services or otherwise accessing this Site you represent, warrant and agree not to
             engage in any of the activities, which are strictly prohibited by us, and that include, but are not
@@ -225,7 +225,7 @@
             violates your rights in any manner, you are welcome to contact us in this regard, and we shall act
             appropriately to handle such complaint.</p>
 <br>
-        <h2>PROPRIETARY RIGHTS</h2>
+        <h2>Proprietary rights</h2>
 
         <p>Excluding your User Content, you acknowledge that the Site and all of its content (the “Site
             Content”), including but not limited to source code, scripts, design of and “look and feel”, HTML
@@ -245,7 +245,7 @@
             receiving our written consent. Any unauthorized copying, alteration, distribution, transmission,
             performance, display, or alternative use of the Site Content is prohibited.</p>
 <br>
-        <h2>PAYMENT TERMS AND SUBSCRIPTION</h2>
+        <h2>Payment terms and subscription</h2>
 
         <p>You may use paid Products only by spending our virtual currency called "Coins". To get the Coins, you
             pay real currency for them. Payments for the credits are charged in US dollars unless you see
@@ -741,7 +741,36 @@
 <script src="js/app.js"></script>
 <script type="text/javascript" src="js/swiper-bundle.min.js" id="swiper-js"></script>
 <script type="text/javascript" src="js/slick.min.js" id="slick-js"></script>
+
 <script type="text/javascript" src="js/main.min.js" id="main-js"></script>
+<script type="text/javascript">
+        let isScrolling = false;
+
+        jQuery('.comics-slider').on('wheel', function (e) {
+            const deltaX = e.originalEvent.deltaX; // Горизонтальное движение
+            const deltaY = e.originalEvent.deltaY; // Вертикальное движение
+
+            // Проверяем, чтобы движение было преимущественно горизонтальным
+            if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) < 100) {
+                e.preventDefault();
+
+                if (!isScrolling) {
+                    isScrolling = true;
+
+                    if (deltaX < 0) {
+                        jQuery(this).slick('slickPrev'); // Прокрутка влево
+                    } else {
+                        jQuery(this).slick('slickNext'); // Прокрутка вправо
+                    }
+
+                    // Снимаем блокировку через 300 мс
+                    setTimeout(() => {
+                        isScrolling = false;
+                    }, 300);
+                }
+            }
+        });
+</script>
 
 </body>
 
