@@ -1442,6 +1442,10 @@ template {
   font-size: 10px;
   padding: 3px 4.5px; }
 
+@media (max-width: 767px) {
+  .contacs-page main {
+    padding-top: 82px; } }
+
 .page-title h1 {
   margin: 0; }
 
@@ -1474,6 +1478,9 @@ template {
   font-weight: 500;
   line-height: 150%;
   margin-bottom: 12px; }
+  @media (max-width: 767px) {
+    .contacts-info__title {
+      font-size: 16px; } }
 
 .contacts-info__email {
   display: -webkit-box;
@@ -1488,6 +1495,9 @@ template {
   font-weight: 400;
   line-height: 140%;
   text-decoration: underline; }
+  @media (max-width: 767px) {
+    .contacts-info__email {
+      font-size: 14px; } }
   .contacts-info__email svg {
     margin-right: 6px; }
 
@@ -1503,6 +1513,9 @@ template {
     font-weight: 500;
     line-height: 150%;
     margin-bottom: 2px; }
+    @media (max-width: 767px) {
+      .social-list__title {
+        font-size: 16px; } }
 
 .social {
   margin: 0;
@@ -1623,8 +1636,36 @@ template {
     -webkit-transform: translateY(-16px);
     transform: translateY(-16px); } }
 
+.breadcrumb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #9d9aa2;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; }
+  .breadcrumb li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    .breadcrumb li + li::before {
+      content: '/';
+      color: #9d9aa2;
+      margin: 0 4px; }
+  .breadcrumb span {
+    color: #9d9aa2; }
+  .breadcrumb a {
+    color: #4c4c4c; }
+
 .episode-inner {
-  padding: 61px 0 0; }
+  padding: 61px 0 0;
+  max-width: 1110px;
+  width: 100%;
+  margin: 0 auto; }
   .episode-inner__head {
     border-bottom: 1px solid #181818;
     background: #080809;
@@ -1635,9 +1676,20 @@ template {
     right: 0; }
     .episode-inner__head.hide {
       display: none; }
-  .episode-inner__head-box {
+  .episode-inner__head-holder {
     max-width: 1110px;
     margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%; }
+  .episode-inner__head-box {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1932,7 +1984,8 @@ template {
   background: #fff;
   -webkit-box-shadow: 0px 1px 30px 0px rgba(61, 61, 61, 0.08);
   box-shadow: 0px 1px 30px 0px rgba(61, 61, 61, 0.08);
-  border-bottom: 1px solid #fff; }
+  border-bottom: 1px solid #fff;
+  max-width: 922px; }
   .faq-item + .faq-item {
     margin-top: 10px; }
 
@@ -1949,7 +2002,12 @@ template {
   line-height: 140%;
   cursor: pointer;
   position: relative;
-  margin: 0; }
+  margin: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  @media (min-width: 1250px) {
+    .faq-question:hover {
+      font-weight: 500; } }
 
 .faq-question::after {
   border-bottom: 1px solid #010101;
@@ -1967,8 +2025,8 @@ template {
   transform-origin: 66% 66%;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
-  -webkit-transition: all 0.15s ease-in-out;
-  transition: all 0.15s ease-in-out; }
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
 
 .faq-item.active .faq-question::after {
   -webkit-transform: rotate(-135deg);
@@ -1981,13 +2039,20 @@ template {
   transition: max-height 0.4s ease;
   padding: 0 16px;
   font-size: 14px;
+  line-height: 150%;
   position: absolute;
+  font-family: 'Manrope';
+  font-weight: 500;
   left: -9999px; }
 
 .faq-item.active .faq-answer {
   max-height: 1000px;
   left: 0;
-  position: relative; }
+  position: relative;
+  margin-top: -8px; }
+
+.faq-item.active .faq-question {
+  font-weight: 500; }
 
 .footer {
   background: #010101;
@@ -2152,7 +2217,8 @@ template {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  max-width: 1110px;
+  max-width: 1142px;
+  padding: 0 16px;
   margin: 0 auto; }
   .forgot-section .episode-inner__back {
     position: absolute;
@@ -2188,7 +2254,7 @@ template {
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
-    max-width: 290px;
+    max-width: 370px;
     width: 100%;
     margin: 0 auto 24px; }
     @media (max-width: 479px) {
@@ -2873,7 +2939,8 @@ aside {
 div.comics,
 article.comics {
   border-radius: 12px;
-  position: relative; }
+  position: relative;
+  vertical-align: top; }
   div.comics .comic-thumbnail,
   article.comics .comic-thumbnail {
     min-height: 148px;
@@ -2924,7 +2991,6 @@ article.comics {
     div.comics .comic-thumbnail .views > span,
     article.comics .comic-thumbnail .episodes,
     article.comics .comic-thumbnail .views > span {
-      padding: 3px 6px;
       display: -webkit-inline-box;
       display: -ms-inline-flexbox;
       display: inline-flex;
@@ -2934,6 +3000,20 @@ article.comics {
       article.comics .comic-thumbnail .episodes svg,
       article.comics .comic-thumbnail .views > span svg {
         display: block; }
+    div.comics .comic-thumbnail .views > span,
+    article.comics .comic-thumbnail .views > span {
+      height: 24px;
+      line-height: 24px; }
+    div.comics .comic-thumbnail .episodes,
+    article.comics .comic-thumbnail .episodes {
+      width: 24px;
+      height: 22px;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
     div.comics .comic-thumbnail .label,
     article.comics .comic-thumbnail .label {
       color: #fff;
@@ -3106,21 +3186,34 @@ article.banner {
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  line-height: 150%; }
+  line-height: 150%;
+  font-family: 'Manrope'; }
   .content-page h1 {
     color: #010101;
     font-size: 44px;
     font-style: normal;
     font-weight: 700;
     line-height: 105%;
-    margin: 0 0 16px; }
+    margin: 0 0 16px;
+    font-family: 'Lufga'; }
   .content-page h2 {
     color: #010101;
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
     line-height: 150%;
-    margin: 0 0 10px; }
+    margin: 0 0 10px;
+    font-family: 'Lufga'; }
+  .content-page h3 {
+    font-family: 'Lufga';
+    font-size: 18px;
+    font-weight: 500; }
+  .content-page a {
+    color: #010101;
+    text-decoration: underline; }
+    @media (min-width: 1250px) {
+      .content-page a:hover {
+        color: #febc49; } }
   .content-page p {
     margin: 10px 0; }
   .content-page ul {
