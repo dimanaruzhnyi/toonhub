@@ -31,10 +31,11 @@
       <div class="header-holder">
         <nav class="menu-container">
           <ul id="menu-general-menu" class="menu menu-general">
-            <li id="menu-item-53" class="menu-item menu-item-type-custom menu-item-object-custom current_page_item menu-item-53"><a href="#">My Library</a></li>
             <li id="menu-item-231" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-231"><a href="https://toonhub.org/genres/">Genres</a></li>
-            <li id="menu-item-55" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-55"><a href="#">New</a></li>
             <li id="menu-item-56" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-56"><a href="#">Popular</a></li>
+            <li id="menu-item-55" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-55"><a href="#">New</a></li>
+            <li id="menu-item-55" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-55"><a href="#">Hot Comics</a></li>
+            <li id="menu-item-55" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-55"><a href="#">Contacts</a></li>
           </ul>
         </nav>
         <button class="header__sign" type="button" name="button">
@@ -88,7 +89,35 @@
       </div>
     </div>
   </main>
-  <div id="authentification" class="modal">
+  <div class="modal">
+    <div class="modal__overlay"></div>
+    <div class="age-holder">
+      <div class="modal__close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+        <path d="M11.7891 10.793L6.99376 6.00027L11.7891 1.24285C12.0294 0.964521 12.0164 0.546831 11.7592 0.284207C11.5021 0.021583 11.0874 0.00256044 10.8076 0.240548L5.99824 4.96268L1.27301 0.205256C0.999562 -0.0684185 0.557939 -0.0684185 0.284494 0.205256C0.151772 0.33779 0.077118 0.518202 0.077118 0.706408C0.077118 0.894614 0.151772 1.07503 0.284494 1.20756L5.00271 5.95792L0.207376 10.7083C0.0746542 10.8408 0 11.0212 0 11.2094C0 11.3976 0.0746542 11.5781 0.207376 11.7106C0.339682 11.8427 0.51879 11.9164 0.705138 11.9153C0.888067 11.9164 1.06418 11.8455 1.19589 11.7176L5.99824 6.95317L10.8076 11.7953C10.9399 11.9274 11.119 12.0011 11.3054 12C11.4893 11.9992 11.6655 11.9257 11.7961 11.7953C11.9279 11.6618 12.0013 11.4809 12 11.2927C11.9987 11.1045 11.9227 10.9246 11.7891 10.793Z"/>
+        </svg>
+      </div>
+      <div class="age-holder__image">
+        <img src="images/popup-image.jpg" width="340" height="296" alt="image">
+      </div>
+      <div class="age-holder__info">
+        <div class="age-holder__title">
+          Age verefication
+        </div>
+        <div class="age-holder__subtitle">
+          Are tou over the age og 18?
+        </div>
+        <div class="age-holder__text">
+          You need to confirm that you are over the age 18 to read adult contetn.
+        </div>
+        <div class="age-holder__buttons">
+          <button class="age-holder__btn-1" type="button" name="button">No</button>
+          <button class="age-holder__btn-2" type="button" name="button"><span>Yes</span></button>
+        </div>
+      </div>
+    </div>
+</div>
+<div id="authentification" class="modal">
     <div class="modal__overlay"></div>
     <div class="modal__content">
       <div class="modal__close">
@@ -248,39 +277,10 @@
   <footer class="footer footer-desktop">
   <div class="container">
     <div class="footer-content">
-      <a href="https://toonhub.org" class="site-url" aria-label="Go to Homepage">
-        <img class="logo" src="images/ToonHUB.svg" alt="ToonHub" width="98" height="34" loading="lazy">
-      </a>
-      <div class="footer-content__navigation">
-        <nav class="menu-container">
-          <ul id="menu-footer-menu" class="menu menu-footer">
-            <li id="menu-item-57" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-57">
-              <a href="#">Genres</a>
-            </li>
-            <li id="menu-item-137" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-137">
-              <a href="https://toonhub.org/payment-and-refund-policy/">Contact us</a>
-            </li>
-            <li id="menu-item-132" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-132">
-              <a href="https://toonhub.org/terms-and-conditions/">FAQ</a>
-            </li>
-            <li id="menu-item-140" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
-              <a href="https://toonhub.org/privacy-policy/">My account</a>
-            </li>
-          </ul>
-        </nav>
-        <nav class="menu-container">
-          <ul id="menu-footer-menu" class="menu menu-footer">
-            <li id="menu-item-140" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
-              <a href="https://toonhub.org/privacy-policy/">Terms & Refund Policy </a>
-            </li>
-            <li id="menu-item-132" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-132">
-              <a href="https://toonhub.org/terms-and-conditions/">Terms and Conditions</a>
-            </li>
-            <li id="menu-item-132" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-132">
-              <a href="https://toonhub.org/terms-and-conditions/">Privacy policy</a>
-            </li>
-          </ul>
-        </nav>
+      <div class="footer-content__social">
+        <a href="https://toonhub.org" class="site-url" aria-label="Go to Homepage">
+          <img class="logo" src="images/ToonHUB.svg" alt="ToonHub" width="104" height="36" loading="lazy">
+        </a>
         <ul class="social">
           <li>
             <a target="_blank" href="#">
@@ -312,6 +312,37 @@
             </a>
           </li>
         </ul>
+      </div>
+      <div class="footer-content__navigation">
+        <nav class="menu-container">
+          <ul id="menu-footer-menu" class="menu menu-footer">
+            <li id="menu-item-57" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-57">
+              <a href="#">Genres</a>
+            </li>
+            <li id="menu-item-137" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-137">
+              <a href="https://toonhub.org/payment-and-refund-policy/">Contact us</a>
+            </li>
+            <li id="menu-item-132" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-132">
+              <a href="https://toonhub.org/terms-and-conditions/">FAQ</a>
+            </li>
+            <li id="menu-item-140" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
+              <a href="https://toonhub.org/privacy-policy/">My account</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="menu-container">
+          <ul id="menu-footer-menu" class="menu menu-footer">
+            <li id="menu-item-140" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
+              <a href="https://toonhub.org/privacy-policy/">Terms & Refund Policy </a>
+            </li>
+            <li id="menu-item-132" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-132">
+              <a href="https://toonhub.org/terms-and-conditions/">Terms and Conditions</a>
+            </li>
+            <li id="menu-item-132" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-132">
+              <a href="https://toonhub.org/terms-and-conditions/">Privacy policy</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
     <div class="footer-bottom">
