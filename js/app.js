@@ -160,188 +160,189 @@ if (window.NodeList && !NodeList.prototype.forEach) {
 __webpack_require__(5);
 
 document.addEventListener("DOMContentLoaded", function () {
-    // // AUTHENTIFICATION MODAL
-    // const openAccount = document.querySelector('.auth');
-    // const authModal = document.querySelector("#authentification");
-    //
-    // if (openAccount) {
-    //     openAccount.addEventListener("click", () => {
-    //         if (authModal) {
-    //             authModal.classList.add("open");
-    //         }
-    //     });
-    //
-    //     if (authModal) {
-    //         const authModalOverlay = authModal.querySelector(".modal__overlay");
-    //
-    //         authModalOverlay.addEventListener("click", () => {
-    //             authModal.classList.remove("open");
-    //         });
-    //     }
-    // }
-    //
-    // // AUTHENTIFICATION FORM
-    // const form = document.querySelector("#authentification-form");
-    // const forgotPasswordButton = document.querySelector("#forgot-password");
-    //
-    // if (form) {
-    //     form.addEventListener("submit", handleAuthFormSubmit);
-    // }
-    //
-    // if (forgotPasswordButton) {
-    //     forgotPasswordButton.addEventListener("click", handleForgotPasswordClick);
-    // }
-    //
-    // // ADULT SWITCHER
-    // const adultSwitcher = document.querySelector(".adult-switcher");
-    //
-    // if (adultSwitcher) {
-    //     adultSwitcher.addEventListener("click", function() {
-    //         const adultCookie = getCookie("adult");
-    //
-    //         (!adultCookie || adultCookie === 0)
-    //             ? setCookie("adult", 1, 365)
-    //             : eraseCookie("adult");
-    //
-    //         this.classList.toggle("active");
-    //     });
-    // }
-    //
-    // // SWIPER
-    // const sliders = document.querySelectorAll(".swiper-container");
-    //
-    // if (sliders.length > 0) {
-    //     sliders.forEach((slider) => {
-    //         if (slider.querySelector(".swiper-wrapper")) { // Validate structure
-    //             const swiper = new Swiper(slider, {
-    //                 loop: false,
-    //                 slidesPerView: 1,
-    //                 pagination: {
-    //                     el: slider.querySelector(".swiper-pagination"), // Relative selector
-    //                     clickable: true,
-    //                 }
-    //             });
-    //         } else {
-    //             console.warn("Invalid swiper-container structure:", slider);
-    //         }
-    //     });
-    // }
-    //
-    // // REUSABLE FUNCTIONS
-    // function setCookie(name, value, days) {
-    //     let expires = "";
-    //
-    //     if (days) {
-    //         var date = new Date();
-    //         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-    //         expires = "; expires=" + date.toUTCString();
-    //     }
-    //
-    //     document.cookie = name + "=" + (value || "") + expires + "; path=/";
-    // }
-    //
-    // function getCookie(name) {
-    //     let nameEQ = name + "=";
-    //     let ca = document.cookie.split(';');
-    //
-    //     for (var i = 0; i < ca.length; i++) {
-    //         var c = ca[i];
-    //         while (c.charAt(0) == " ") c = c.substring(1, c.length);
-    //         if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-    //     }
-    //
-    //     return null;
-    // }
-    //
-    // function eraseCookie(name) {
-    //     document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
-    // }
-    //
-    // function displayError(message) {
-    //     const errorDiv = document.querySelector(".error");
-    //     if (errorDiv) {
-    //         errorDiv.textContent = message;
-    //         errorDiv.style.display = "block";
-    //     }
-    // }
-    //
-    // function generateRandomPassword(length) {
-    //     const charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
-    //     let password = "";
-    //     for (let i = 0; i < length; i++) {
-    //         password += charset.charAt(Math.floor(Math.random() * charset.length));
-    //     }
-    //     return password;
-    // }
-    //
-    // async function makeApiRequest(url, data) {
-    //     try {
-    //         const response = await fetch(url, {
-    //             method: "POST",
-    //             headers: {
-    //                 "Content-Type": "application/json",
-    //             },
-    //             body: JSON.stringify(data),
-    //         });
-    //
-    //         const responseData = await response.json();
-    //         return responseData;
-    //     } catch (error) {
-    //         console.error("Error:", error);
-    //         displayError("Something went wrong. Please try again.");
-    //         return null;
-    //     }
-    // }
-    //
-    // async function handleAuthFormSubmit(e) {
-    //     e.preventDefault();
-    //
-    //     const input = document.querySelector('#username').value.trim();
-    //     const password = document.querySelector('#password').value.trim();
-    //
-    //     if (!input || !password) {
-    //         displayError('Both username/email and password are required.');
-    //         return;
-    //     }
-    //
-    //     const data = { action: "login", input, password };
-    //     console.log('Sending data:', data);
-    //
-    //     try {
-    //         const responseData = await makeApiRequest('/wp-json/traffband/v1/auth', data);
-    //         console.log('Received response:', responseData);
-    //
-    //         // Заменили оператор ?. на обычные проверки
-    //         if (responseData && responseData.message === 'Login successful') {
-    //             window.location.reload();
-    //         } else {
-    //             displayError(`Error: ${responseData && responseData.message || 'Unknown error'}`);
-    //         }
-    //     } catch (error) {
-    //         console.error('Request error:', error);
-    //     }
-    // }
-    //
-    // async function handleForgotPasswordClick() {
-    //     const input = document.querySelector('#username').value.trim();
-    //
-    //     if (!input) {
-    //         displayError('Please enter your username/email to recover the password.');
-    //         return;
-    //     }
-    //
-    //     const newPassword = generateRandomPassword(16);
-    //     const data = { action: "forgot", input, newPassword };
-    //
-    //     const responseData = await makeApiRequest('/wp-json/traffband/v1/forgot-password', data);
-    //
-    //     // Заменили оператор ?. на обычные проверки
-    //     if (responseData && responseData.message) {
-    //         displayError(responseData.message);
-    //     } else {
-    //         displayError(`Error: ${responseData && responseData.message || 'Unknown error'}`);
-    //     }
-    // }
+
+  // // AUTHENTIFICATION MODAL
+  // const openAccount = document.querySelector('.auth');
+  // const authModal = document.querySelector("#authentification");
+  //
+  // if (openAccount) {
+  //     openAccount.addEventListener("click", () => {
+  //         if (authModal) {
+  //             authModal.classList.add("open");
+  //         }
+  //     });
+  //
+  //     if (authModal) {
+  //         const authModalOverlay = authModal.querySelector(".modal__overlay");
+  //
+  //         authModalOverlay.addEventListener("click", () => {
+  //             authModal.classList.remove("open");
+  //         });
+  //     }
+  // }
+  //
+  // // AUTHENTIFICATION FORM
+  // const form = document.querySelector("#authentification-form");
+  // const forgotPasswordButton = document.querySelector("#forgot-password");
+  //
+  // if (form) {
+  //     form.addEventListener("submit", handleAuthFormSubmit);
+  // }
+  //
+  // if (forgotPasswordButton) {
+  //     forgotPasswordButton.addEventListener("click", handleForgotPasswordClick);
+  // }
+  //
+  // // ADULT SWITCHER
+  // const adultSwitcher = document.querySelector(".adult-switcher");
+  //
+  // if (adultSwitcher) {
+  //     adultSwitcher.addEventListener("click", function() {
+  //         const adultCookie = getCookie("adult");
+  //
+  //         (!adultCookie || adultCookie === 0)
+  //             ? setCookie("adult", 1, 365)
+  //             : eraseCookie("adult");
+  //
+  //         this.classList.toggle("active");
+  //     });
+  // }
+  //
+  // // SWIPER
+  // const sliders = document.querySelectorAll(".swiper-container");
+  //
+  // if (sliders.length > 0) {
+  //     sliders.forEach((slider) => {
+  //         if (slider.querySelector(".swiper-wrapper")) { // Validate structure
+  //             const swiper = new Swiper(slider, {
+  //                 loop: false,
+  //                 slidesPerView: 1,
+  //                 pagination: {
+  //                     el: slider.querySelector(".swiper-pagination"), // Relative selector
+  //                     clickable: true,
+  //                 }
+  //             });
+  //         } else {
+  //             console.warn("Invalid swiper-container structure:", slider);
+  //         }
+  //     });
+  // }
+  //
+  // // REUSABLE FUNCTIONS
+  // function setCookie(name, value, days) {
+  //     let expires = "";
+  //
+  //     if (days) {
+  //         var date = new Date();
+  //         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+  //         expires = "; expires=" + date.toUTCString();
+  //     }
+  //
+  //     document.cookie = name + "=" + (value || "") + expires + "; path=/";
+  // }
+  //
+  // function getCookie(name) {
+  //     let nameEQ = name + "=";
+  //     let ca = document.cookie.split(';');
+  //
+  //     for (var i = 0; i < ca.length; i++) {
+  //         var c = ca[i];
+  //         while (c.charAt(0) == " ") c = c.substring(1, c.length);
+  //         if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+  //     }
+  //
+  //     return null;
+  // }
+  //
+  // function eraseCookie(name) {
+  //     document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+  // }
+  //
+  // function displayError(message) {
+  //     const errorDiv = document.querySelector(".error");
+  //     if (errorDiv) {
+  //         errorDiv.textContent = message;
+  //         errorDiv.style.display = "block";
+  //     }
+  // }
+  //
+  // function generateRandomPassword(length) {
+  //     const charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+  //     let password = "";
+  //     for (let i = 0; i < length; i++) {
+  //         password += charset.charAt(Math.floor(Math.random() * charset.length));
+  //     }
+  //     return password;
+  // }
+  //
+  // async function makeApiRequest(url, data) {
+  //     try {
+  //         const response = await fetch(url, {
+  //             method: "POST",
+  //             headers: {
+  //                 "Content-Type": "application/json",
+  //             },
+  //             body: JSON.stringify(data),
+  //         });
+  //
+  //         const responseData = await response.json();
+  //         return responseData;
+  //     } catch (error) {
+  //         console.error("Error:", error);
+  //         displayError("Something went wrong. Please try again.");
+  //         return null;
+  //     }
+  // }
+  //
+  // async function handleAuthFormSubmit(e) {
+  //     e.preventDefault();
+  //
+  //     const input = document.querySelector('#username').value.trim();
+  //     const password = document.querySelector('#password').value.trim();
+  //
+  //     if (!input || !password) {
+  //         displayError('Both username/email and password are required.');
+  //         return;
+  //     }
+  //
+  //     const data = { action: "login", input, password };
+  //     console.log('Sending data:', data);
+  //
+  //     try {
+  //         const responseData = await makeApiRequest('/wp-json/traffband/v1/auth', data);
+  //         console.log('Received response:', responseData);
+  //
+  //         // Заменили оператор ?. на обычные проверки
+  //         if (responseData && responseData.message === 'Login successful') {
+  //             window.location.reload();
+  //         } else {
+  //             displayError(`Error: ${responseData && responseData.message || 'Unknown error'}`);
+  //         }
+  //     } catch (error) {
+  //         console.error('Request error:', error);
+  //     }
+  // }
+  //
+  // async function handleForgotPasswordClick() {
+  //     const input = document.querySelector('#username').value.trim();
+  //
+  //     if (!input) {
+  //         displayError('Please enter your username/email to recover the password.');
+  //         return;
+  //     }
+  //
+  //     const newPassword = generateRandomPassword(16);
+  //     const data = { action: "forgot", input, newPassword };
+  //
+  //     const responseData = await makeApiRequest('/wp-json/traffband/v1/forgot-password', data);
+  //
+  //     // Заменили оператор ?. на обычные проверки
+  //     if (responseData && responseData.message) {
+  //         displayError(responseData.message);
+  //     } else {
+  //         displayError(`Error: ${responseData && responseData.message || 'Unknown error'}`);
+  //     }
+  // }
 });
 
 /***/ }),
@@ -375,8 +376,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   }
 
   for (var i = 1; i < _files2.default.length; i++) {
-    // nav.innerHTML += `<a href="/toonhub/${files[i]}">${i}-${files[i]}</a>`;
     nav.innerHTML += "<a href=\"/toonhub/" + _files2.default[i] + "\">" + i + "-" + _files2.default[i] + "</a>";
+    // nav.innerHTML += `<a href="/${files[i]}">${i}-${files[i]}</a>`;
   }
   document.body.appendChild(wrapper);
   var flag = localStorage.getItem("flag") ? JSON.parse(localStorage.getItem("flag")) : false;
@@ -414,7 +415,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = ["dev", "account-password.html", "account.html", "category.html", "comics-view.html", "contacts.html", "faq.html", "forgot.html", "home.html", "index.html", "popup.html", "privacy.html", "terms.html"];
+exports.default = ["dev", "account.html", "category.html", "comics-view.html", "contacts.html", "faq.html", "forgot.html", "home.html", "index.html", "payment-page.html", "popup-2.html", "popup-3.html", "popup-4.html", "popup-5.html", "popup-6.html", "popup.html", "privacy.html", "terms.html"];
 
 /***/ })
 /******/ ]);

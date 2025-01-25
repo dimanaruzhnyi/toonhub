@@ -28,6 +28,12 @@ img {
 @font-face {
   font-family: 'Manrope';
   font-style: normal;
+  font-weight: 400;
+  src: local("Manrope Medium"), url("../fonts/Manrope-Regular.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
   font-weight: 500;
   src: local("Manrope Medium"), url("../fonts/Manrope-Medium.woff") format("woff"); }
 
@@ -282,6 +288,9 @@ html {
         border-radius: 100px;
         background: #f3f4f6;
         padding: 10px 20px; } }
+    @media (max-width: 767px) {
+      .account-holder__aside-nav a:active {
+        opacity: 0.7; } }
     .account-holder__aside-nav a::after {
       border-bottom: 1px solid #010101;
       border-right: 1px solid #010101;
@@ -1173,7 +1182,9 @@ template {
   .comic-list-sidebar div.comics .comic-title,
   .comic-list-sidebar article.comics .comic-title {
     font-weight: 400;
-    margin-bottom: 15px; }
+    margin-bottom: 12px;
+    height: auto;
+    font-size: 16px; }
     @media (max-width: 767px) {
       .comic-list-sidebar div.comics .comic-title,
       .comic-list-sidebar article.comics .comic-title {
@@ -1202,7 +1213,7 @@ template {
   font-family: 'Manrope';
   font-size: 14px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 150%; }
   .description-wrapper p:first-child {
     margin-top: 0; }
@@ -1357,7 +1368,7 @@ template {
   color: #9d9aa2;
   font-size: 12px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 150%; }
 
 .genres-cus-title {
@@ -1491,6 +1502,10 @@ template {
 
 @media (min-width: 1250px) {
   .contacts-info__item a:hover {
+    color: #febc49; } }
+
+@media (max-width: 767px) {
+  .contacts-info__item a:active {
     color: #febc49; } }
 
 .contacts-info__title {
@@ -2018,10 +2033,11 @@ template {
 
 .to-top {
   position: fixed;
-  bottom: 400px;
+  bottom: 100px;
   right: 50px;
   width: 52px;
   height: 52px;
+  z-index: 10;
   border-radius: 14px;
   border: 2px solid #f3f4f6;
   background: #fff;
@@ -2124,7 +2140,7 @@ template {
   line-height: 150%;
   position: absolute;
   font-family: 'Manrope';
-  font-weight: 500;
+  font-weight: 400;
   left: -9999px; }
 
 .faq-item.active .faq-answer {
@@ -2435,8 +2451,9 @@ ul {
 a {
   text-decoration: unset;
   cursor: pointer; }
-  a:hover {
-    color: #FEEC49; }
+  @media (min-width: 1250px) {
+    a:hover {
+      color: #FEEC49; } }
 
 button,
 .button {
@@ -2542,7 +2559,7 @@ main {
     color: #010101;
     font-size: 14px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 150%;
     font-family: 'Manrope'; }
     .section.text.disclaimer:last-child {
@@ -2721,6 +2738,15 @@ aside {
     font-weight: 500;
     line-height: 150%;
     margin-bottom: 24px; }
+  .modal__subtitle {
+    color: #010101;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    margin: -17px 0 24px;
+    display: block; }
   .modal__row {
     position: relative;
     margin-bottom: 14px; }
@@ -3114,7 +3140,9 @@ article.comics {
       justify-content: center;
       -webkit-box-align: center;
       -ms-flex-align: center;
-      align-items: center; }
+      align-items: center;
+      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(14px); }
     div.comics .comic-thumbnail .label,
     article.comics .comic-thumbnail .label {
       color: #fff;
@@ -3157,7 +3185,9 @@ article.comics {
         -ms-flex-align: center;
         align-items: center;
         gap: 2px;
-        font-size: 12px; }
+        font-size: 12px;
+        -webkit-backdrop-filter: blur(14px);
+        backdrop-filter: blur(14px); }
     div.comics .comic-thumbnail .episodes,
     article.comics .comic-thumbnail .episodes {
       right: 0;
@@ -3287,7 +3317,7 @@ article.banner {
   color: #0d0c0c;
   font-size: 14px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 150%;
   font-family: 'Manrope'; }
   .content-page h1 {
@@ -3399,7 +3429,16 @@ article.banner {
     gap: 6px; }
 
 .page-template-page-genres main {
-  padding-top: 77px; }
+  padding-top: 84px; }
+  @media all and (max-width: 767px) {
+    .page-template-page-genres main {
+      padding-top: 75px; } }
+
+.page-template-page-genres .breadcrumb {
+  margin: 0 auto 24px; }
+  @media all and (max-width: 767px) {
+    .page-template-page-genres .breadcrumb {
+      margin: 0 auto 20px; } }
 
 .all-comics {
   margin-top: 10px; }
@@ -3899,7 +3938,9 @@ article.banner {
   margin-bottom: 0; }
   @media (max-width: 767px) {
     .home .comics-grid {
-      margin-right: -16px; } }
+      margin-right: -16px;
+      margin-left: -16px;
+      padding-left: 16px; } }
 
 .home main {
   padding-top: 66px; }
@@ -3908,7 +3949,9 @@ article.banner {
   margin-bottom: 54px; }
   @media (max-width: 767px) {
     .home .section {
-      margin-bottom: 36px; } }
+      margin-bottom: 36px; }
+      .home .section.hot {
+        margin-bottom: 78px; } }
   .home .section.section-slider {
     margin-bottom: 4px; }
     @media (max-width: 767px) {
@@ -4078,6 +4121,9 @@ article.banner {
   display: block;
   padding: 20px;
   height: 100%; }
+  @media (min-width: 1250px) {
+    .payment-section__box:hover {
+      border: 1px solid #38aa7e; } }
   @media (max-width: 767px) {
     .payment-section__box {
       display: -webkit-box;
@@ -4205,7 +4251,8 @@ article.banner {
       -ms-flex-order: 1;
       order: 1;
       width: 100%;
-      display: block; } }
+      display: block;
+      margin: 0; } }
   .payment-section__prices sub {
     margin-left: 1px;
     color: #4c4c4c;
