@@ -1104,7 +1104,7 @@ template {
   text-align: center;
   font-size: 12px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 150%;
   margin-left: 4px;
   padding-left: 1px; }
@@ -3187,7 +3187,7 @@ article.comics {
       article.comics .comic-thumbnail .views > span {
         color: #fff;
         border-radius: 100px;
-        padding: 4px;
+        padding: 4px 6px;
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
@@ -4188,7 +4188,7 @@ article.banner {
       flex-shrink: 0;
       -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-      max-width: 90px;
+      max-width: 88px;
       width: 100%; } }
 
 .payment-section__week {
@@ -4325,7 +4325,7 @@ article.banner {
   display: block; }
   @media (max-width: 767px) {
     .payment-section__text {
-      max-width: 160px;
+      max-width: 162px;
       font-size: 11px; } }
   .payment-section__text em {
     font-style: normal;
