@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -373,57 +374,6 @@ img {
   font-weight: 900;
   src: local("Lufga Black Italic"), url("LufgaBlackItalic.woff") format("woff");
 }
-@supports not selector(::-webkit-scrollbar) {
-  html {
-    scrollbar-width: thin;
-    scrollbar-color: var(--thumb-color) var(--track-color);
-  }
-}
-html {
-  scrollbar-width: thin;
-  scrollbar-color: #6d7c77 #cfd7c7;
-}
-
-body::-webkit-scrollbar {
-  width: 0.5rem;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: var(--tertiary-color);
-  border-radius: 0.7rem;
-}
-
-body::-webkit-scrollbar-track {
-  background-color: var(--primary-color);
-  border-radius: 0.7rem;
-}
-
-body {
-  scrollbar-width: thin;
-  scrollbar-color: #6d7c77 #cfd7c7;
-}
-
-body::-webkit-scrollbar {
-  width: 0.5rem;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: var(--tertiary-color);
-  border-radius: 0.7rem;
-}
-
-body::-webkit-scrollbar-track {
-  background-color: var(--primary-color);
-  border-radius: 0.7rem;
-}
-
-/* Browsers without `::-webkit-scrollbar-*` support */
-@supports not selector(::-webkit-scrollbar) {
-  html {
-    scrollbar-width: thin;
-    scrollbar-color: #6d7c77 #cfd7c7;
-  }
-}
 * {
   outline: none;
   box-sizing: border-box;
@@ -435,6 +385,25 @@ body::-webkit-scrollbar-track {
 * {
   margin: 0;
   padding: 0;
+}
+
+/* Стилизация полосы прокрутки */
+::-webkit-scrollbar {
+  height: 8px; /* Высота полосы прокрутки */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Цвет фона полосы */
+  border-radius: 10px; /* Радиус углов полосы */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Цвет бегунка */
+  border-radius: 10px; /* Радиус углов бегунка */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Цвет бегунка при наведении */
 }
 
 .account-holder {
@@ -2977,18 +2946,9 @@ form .inputs-wrapper {
     margin: 0 -16px;
     padding: 0 16px 10px;
     position: relative;
-  }
-  .genres-grid .scroll-indicator {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 3px;
-    background: #9d9aa2;
-    width: 50px;
-    transition: transform 0.3s ease;
-  }
-  .genres-grid::-webkit-scrollbar {
-    display: none;
+    overflow-x: scroll; /* Всегда показывать горизонтальную прокрутку */
+    -webkit-overflow-scrolling: touch; /* Плавная прокрутка на iOS */
+    white-space: nowrap;
   }
 }
 
