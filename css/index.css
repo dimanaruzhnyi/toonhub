@@ -373,6 +373,57 @@ img {
   font-weight: 900;
   src: local("Lufga Black Italic"), url("LufgaBlackItalic.woff") format("woff");
 }
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumb-color) var(--track-color);
+  }
+}
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #6d7c77 #cfd7c7;
+}
+
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--tertiary-color);
+  border-radius: 0.7rem;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: var(--primary-color);
+  border-radius: 0.7rem;
+}
+
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #6d7c77 #cfd7c7;
+}
+
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--tertiary-color);
+  border-radius: 0.7rem;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: var(--primary-color);
+  border-radius: 0.7rem;
+}
+
+/* Browsers without `::-webkit-scrollbar-*` support */
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #6d7c77 #cfd7c7;
+  }
+}
 * {
   outline: none;
   box-sizing: border-box;
@@ -2894,6 +2945,7 @@ form .inputs-wrapper {
 @media (max-width: 767px) {
   .genres-grid ul {
     width: 700px;
+    overflow-x: auto;
   }
 }
 .genres-grid ul li {
@@ -2915,7 +2967,7 @@ form .inputs-wrapper {
     grid-template-rows: repeat(2, max-content);
     grid-auto-flow: column;
     gap: 6px;
-    overflow-x: scroll !important;
+    overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
     box-sizing: border-box;
@@ -2924,19 +2976,19 @@ form .inputs-wrapper {
     height: max-content;
     margin: 0 -16px;
     padding: 0 16px 10px;
+    position: relative;
+  }
+  .genres-grid .scroll-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: #9d9aa2;
+    width: 50px;
+    transition: transform 0.3s ease;
   }
   .genres-grid::-webkit-scrollbar {
-    height: 4px;
-    background-color: #e0e0e0;
-    border-radius: 4px;
-  }
-  .genres-grid::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background: #9d9aa2;
-  }
-  .genres-grid::-webkit-scrollbar-track {
-    background-color: #f3f4f6;
-    border-radius: 4px;
+    display: none;
   }
 }
 
@@ -5300,11 +5352,6 @@ form .inputs-wrapper {
     padding: 0 40px 0 20px;
     min-width: 223px;
     position: relative;
-  }
-}
-@media (max-width: 767px) {
-  .section-slider .slide-content .button {
-    display: none;
   }
 }
 .section-slider .slide-content .button span {
