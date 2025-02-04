@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -385,25 +384,6 @@ img {
 * {
   margin: 0;
   padding: 0;
-}
-
-/* Стилизация полосы прокрутки */
-::-webkit-scrollbar {
-  height: 8px; /* Высота полосы прокрутки */
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Цвет фона полосы */
-  border-radius: 10px; /* Радиус углов полосы */
-}
-
-::-webkit-scrollbar-thumb {
-  background: #888; /* Цвет бегунка */
-  border-radius: 10px; /* Радиус углов бегунка */
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555; /* Цвет бегунка при наведении */
 }
 
 .account-holder {
@@ -1699,7 +1679,7 @@ div.comics .comic-thumbnail .views > span,
 article.comics .comic-thumbnail .episodes,
 article.comics .comic-thumbnail .views > span {
   display: inline-flex;
-  background: rgba(1, 1, 1, 0.3);
+  background: rgba(0, 0, 0, 0.5);
 }
 div.comics .comic-thumbnail .episodes svg,
 div.comics .comic-thumbnail .views > span svg,
@@ -2945,10 +2925,19 @@ form .inputs-wrapper {
     height: max-content;
     margin: 0 -16px;
     padding: 0 16px 10px;
-    position: relative;
-    overflow-x: scroll; /* Всегда показывать горизонтальную прокрутку */
-    -webkit-overflow-scrolling: touch; /* Плавная прокрутка на iOS */
-    white-space: nowrap;
+  }
+  .genres-grid::-webkit-scrollbar {
+    height: 4px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+  }
+  .genres-grid::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #9d9aa2;
+  }
+  .genres-grid::-webkit-scrollbar-track {
+    background-color: #f3f4f6;
+    border-radius: 4px;
   }
 }
 
@@ -3514,6 +3503,93 @@ form .inputs-wrapper {
   flex-shrink: 0;
 }
 
+.comic-list__btn-box {
+  text-align: right;
+}
+@media (max-width: 767px) {
+  .comic-list__btn-box {
+    text-align: center;
+  }
+}
+.comic-list__resume {
+  padding: 7px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  min-height: 32px;
+  border-radius: 100px;
+  background: #FEEC49;
+  color: #4c4c4c;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  margin-top: 6px;
+  position: relative;
+}
+.comic-list__resume svg {
+  margin-left: 4px;
+}
+@media (max-width: 767px) {
+  .comic-list__resume {
+    font-size: 0;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+  }
+  .comic-list__resume svg {
+    margin: 0;
+  }
+}
+.comic-list__resume span {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+.comic-list__resume::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 100px;
+  background: linear-gradient(275deg, #FFD233 0.95%, #FEEC49 47.84%, #FFD233 98.64%);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+.comic-list__completed {
+  border-radius: 100px;
+  background: #f3f4f6;
+  padding: 9px;
+  color: #4c4c4c;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6px;
+  min-height: 32px;
+}
+.comic-list__completed svg {
+  margin-left: 4px;
+}
+@media (max-width: 767px) {
+  .comic-list__completed {
+    font-size: 0;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+  }
+  .comic-list__completed svg {
+    margin: 0;
+  }
+}
 .comic-list__more {
   display: flex;
   justify-content: center;
@@ -3560,12 +3636,19 @@ form .inputs-wrapper {
   border-bottom: 1px solid transparent;
   transition: all 0.3s ease-in-out;
 }
+.comic-list__item.comic-list__item--completed {
+  background: #f9f9f9;
+  box-shadow: none;
+}
 @media (min-width: 1250px) {
   .comic-list__item:hover {
     border-bottom-color: #FEEC49;
   }
   .comic-list__item:hover .comic-list__img img {
     transform: scale(1.06);
+  }
+  .comic-list__item:hover .comic-list__resume::before {
+    opacity: 1;
   }
 }
 .comic-list__item + .comic-list__item {
@@ -3737,23 +3820,14 @@ form .inputs-wrapper {
 .start-read > span {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   position: relative;
   z-index: 1;
   width: 100%;
 }
-.start-read__ico {
-  border-radius: 100px;
-  border: 1px solid #010101;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.start-read__ico svg {
+.start-read > span svg {
   display: block;
-  margin-left: 1px;
+  margin-left: 12px;
 }
 @media all and (min-width: 1250px) {
   .start-read:hover {
