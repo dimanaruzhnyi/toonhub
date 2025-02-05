@@ -392,6 +392,7 @@ body.account-page {
 
 .account-holder {
   display: flex;
+  align-items: flex-start;
 }
 .account-holder__tab {
   display: none;
@@ -452,7 +453,7 @@ body.account-page {
 .account-holder__content {
   width: 100%;
   margin-left: 10px;
-  padding: 36px 40px;
+  padding: 34px 40px;
   background: #fff;
   border-radius: 20px;
 }
