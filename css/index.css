@@ -512,7 +512,7 @@ body.account-page {
   position: relative;
   border: none;
   font-family: "Lufga";
-  margin-top: 20px;
+  margin-top: 8px;
 }
 @media (max-width: 767px) {
   .account-holder__btn {
