@@ -68,7 +68,7 @@
 
   <main id="primary">
     <div class="payment-section container">
-      <h1 class="payment-section__title">Please select a product</h1>
+      <h1>Please select a product</h1>
       <form class="payment-section__holder" action="#" method="post">
         <div class="payment-section__list">
           <label class="payment-section__item">
@@ -393,6 +393,23 @@
       </div>
     </div>
 </div>
+<div id="dev-popup" class="modal dev-popup">
+    <div class="modal__overlay"></div>
+    <div class="modal__content">
+      <div class="modal__close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+        <path d="M11.7891 10.793L6.99376 6.00027L11.7891 1.24285C12.0294 0.964521 12.0164 0.546831 11.7592 0.284207C11.5021 0.021583 11.0874 0.00256044 10.8076 0.240548L5.99824 4.96268L1.27301 0.205256C0.999562 -0.0684185 0.557939 -0.0684185 0.284494 0.205256C0.151772 0.33779 0.077118 0.518202 0.077118 0.706408C0.077118 0.894614 0.151772 1.07503 0.284494 1.20756L5.00271 5.95792L0.207376 10.7083C0.0746542 10.8408 0 11.0212 0 11.2094C0 11.3976 0.0746542 11.5781 0.207376 11.7106C0.339682 11.8427 0.51879 11.9164 0.705138 11.9153C0.888067 11.9164 1.06418 11.8455 1.19589 11.7176L5.99824 6.95317L10.8076 11.7953C10.9399 11.9274 11.119 12.0011 11.3054 12C11.4893 11.9992 11.6655 11.9257 11.7961 11.7953C11.9279 11.6618 12.0013 11.4809 12 11.2927C11.9987 11.1045 11.9227 10.9246 11.7891 10.793Z"/>
+        </svg>
+      </div>
+      <span class="modal__title">Feature in Development!</span>
+      <div class="modal__text">
+        Subscription purchases are not available at the moment, but we're working hard to make it happen soon. Stay tuned for updates!
+      </div>
+      <div class="modal__cont-btn">
+        Ok, thanks
+      </div>
+    </div>
+</div>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const inputs = document.querySelectorAll('.modal__row input');
@@ -545,10 +562,9 @@
         let isScrolling = false;
 
         jQuery('.comics-slider').on('wheel', function (e) {
-            const deltaX = e.originalEvent.deltaX; // Горизонтальное движение
-            const deltaY = e.originalEvent.deltaY; // Вертикальное движение
+            const deltaX = e.originalEvent.deltaX;
+            const deltaY = e.originalEvent.deltaY;
 
-            // Проверяем, чтобы движение было преимущественно горизонтальным
             if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) < 100) {
                 e.preventDefault();
 
@@ -556,18 +572,18 @@
                     isScrolling = true;
 
                     if (deltaX < 0) {
-                        jQuery(this).slick('slickPrev'); // Прокрутка влево
+                        jQuery(this).slick('slickPrev');
                     } else {
-                        jQuery(this).slick('slickNext'); // Прокрутка вправо
+                        jQuery(this).slick('slickNext');
                     }
 
-                    // Снимаем блокировку через 300 мс
                     setTimeout(() => {
                         isScrolling = false;
                     }, 300);
                 }
             }
         });
+
 </script>
 
 </body>

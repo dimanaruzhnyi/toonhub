@@ -37,15 +37,7 @@
     </div>
   </header>
   <main class="episode-inner">
-    <ol class="breadcrumb">
-        <li><a href="#">Home</a></li>
-        <li>
-          <a href="#">Genres</a>
-        </li>
-        <li>
-          <span>Master, may I turn you on?</span>
-        </li>
-    </ol>
+    <nav class="breadcrumbs container" aria-label="breadcrumbs"><ol itemscope="" itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a href="https://toonhub.org" itemprop="item"><span itemprop="name">Home</span></a><meta itemprop="position" content="1"></li><li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><span itemprop="name">Genres</span><meta itemprop="position" content="2"></li></ol></nav>
     <div class="episode-inner__list no-padding">
       <div class="episode-inner__item">
         <img src="images/cm-inner-1.webp" alt="image">
@@ -229,10 +221,9 @@
         let isScrolling = false;
 
         jQuery('.comics-slider').on('wheel', function (e) {
-            const deltaX = e.originalEvent.deltaX; // Горизонтальное движение
-            const deltaY = e.originalEvent.deltaY; // Вертикальное движение
+            const deltaX = e.originalEvent.deltaX;
+            const deltaY = e.originalEvent.deltaY;
 
-            // Проверяем, чтобы движение было преимущественно горизонтальным
             if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) < 100) {
                 e.preventDefault();
 
@@ -240,18 +231,18 @@
                     isScrolling = true;
 
                     if (deltaX < 0) {
-                        jQuery(this).slick('slickPrev'); // Прокрутка влево
+                        jQuery(this).slick('slickPrev');
                     } else {
-                        jQuery(this).slick('slickNext'); // Прокрутка вправо
+                        jQuery(this).slick('slickNext');
                     }
 
-                    // Снимаем блокировку через 300 мс
                     setTimeout(() => {
                         isScrolling = false;
                     }, 300);
                 }
             }
         });
+
 </script>
 
 </body>

@@ -255,10 +255,9 @@
         let isScrolling = false;
 
         jQuery('.comics-slider').on('wheel', function (e) {
-            const deltaX = e.originalEvent.deltaX; // Горизонтальное движение
-            const deltaY = e.originalEvent.deltaY; // Вертикальное движение
+            const deltaX = e.originalEvent.deltaX;
+            const deltaY = e.originalEvent.deltaY;
 
-            // Проверяем, чтобы движение было преимущественно горизонтальным
             if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) < 100) {
                 e.preventDefault();
 
@@ -266,18 +265,18 @@
                     isScrolling = true;
 
                     if (deltaX < 0) {
-                        jQuery(this).slick('slickPrev'); // Прокрутка влево
+                        jQuery(this).slick('slickPrev');
                     } else {
-                        jQuery(this).slick('slickNext'); // Прокрутка вправо
+                        jQuery(this).slick('slickNext');
                     }
 
-                    // Снимаем блокировку через 300 мс
                     setTimeout(() => {
                         isScrolling = false;
                     }, 300);
                 }
             }
         });
+
 </script>
 
 </body>
