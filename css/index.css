@@ -6040,6 +6040,9 @@ form .inputs-wrapper {
   z-index: 1;
 }
 @media (min-width: 1250px) {
+  .library__empty-btn:hover {
+    color: #010101;
+  }
   .library__empty-btn:hover::before {
     opacity: 1;
   }
