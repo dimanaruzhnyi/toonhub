@@ -981,6 +981,10 @@ body {
   background: #fff;
 }
 
+svg {
+  transform: translateZ(0);
+}
+
 h1,
 h2,
 h3,
@@ -2124,7 +2128,7 @@ article.banner img {
   color: #9d9aa2;
   margin: 0 4px;
 }
-.breadcrumbs span {
+.breadcrumbs li:last-child span {
   color: #9d9aa2;
 }
 .breadcrumbs a {
@@ -6085,6 +6089,15 @@ form .inputs-wrapper {
   width: 100%;
   margin: 16px 0 0 16px;
 }
+@media (min-width: 1250px) {
+  .library .comics:hover img {
+    transform: scale(1.05);
+  }
+  .library .comics:hover .comic-thumbnail::after {
+    right: 0;
+    opacity: 1;
+  }
+}
 @media (max-width: 767px) {
   .library .comics {
     padding: 8px 0 0;
@@ -6097,6 +6110,9 @@ form .inputs-wrapper {
     height: 16px;
     padding: 0;
     justify-content: center;
+  }
+  .library .comics .comic-genre {
+    font-size: 12px;
   }
   .library .comics .comic-thumbnail .views > span {
     font-size: 10px;
@@ -6128,6 +6144,7 @@ form .inputs-wrapper {
   font-size: 20px;
   line-height: 150%;
   height: auto;
+  min-height: 60px;
   max-width: 254px;
   margin-bottom: 24px;
 }
@@ -6136,6 +6153,7 @@ form .inputs-wrapper {
     font-size: 16px;
     line-height: 140%;
     margin-bottom: 14px;
+    min-height: 45px;
   }
 }
 
@@ -6172,12 +6190,20 @@ form .inputs-wrapper {
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
+  padding-top: 2px;
+}
+@media (max-width: 767px) {
+  .comics__last-view {
+    padding-top: 0;
+    font-size: 10px;
+    line-height: 140%;
+  }
 }
 .comics__progress {
   border-radius: 12px;
   background: #d6d7e0;
   height: 6px;
-  margin-top: 20px;
+  margin-top: 14px;
 }
 @media (max-width: 767px) {
   .comics__progress {
@@ -6213,7 +6239,7 @@ form .inputs-wrapper {
   .comics .comic-list__completed {
     font-size: 12px;
     width: auto;
-    min-width: 32px;
+    min-width: 100px;
   }
   .comics .comic-list__completed svg {
     margin: 4px;
@@ -6244,7 +6270,7 @@ form .inputs-wrapper {
     font-size: 12px;
     width: auto;
     height: 32px;
-    min-width: 32px;
+    min-width: 100px;
   }
   .comics .comic-list__resume svg {
     margin-left: 7px;
@@ -6296,11 +6322,11 @@ form .inputs-wrapper {
   }
 }
 
-.contacts-info .container {
+.contacts-info {
   display: flex;
 }
 @media (max-width: 767px) {
-  .contacts-info .container {
+  .contacts-info {
     flex-wrap: wrap;
   }
 }
