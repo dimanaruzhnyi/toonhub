@@ -1082,43 +1082,45 @@
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.4/lottie.min.js"></script>
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const preloader = document.getElementById("preloader");
-    const lottieContainer = document.getElementById("lottie-container");
+    document.addEventListener("DOMContentLoaded", function () {
 
-    // Загружаем Lottie-анимацию
-    const animation = lottie.loadAnimation({
-      container: lottieContainer,
-      renderer: "svg",
-      loop: true,
-      autoplay: false,
-      path: "animation.json"
-    });
+      const preloader = document.getElementById("preloader");
+      const lottieContainer = document.getElementById("lottie-container");
 
-    function showPreloaderAndNavigate(url) {
-      preloader.classList.add("active");
-      animation.play(); // Запускаем анимацию
-
-      // Даем браузеру возможность показать прелоадер перед переходом
-      requestAnimationFrame(() => {
-        setTimeout(() => {
-          window.location.href = url;
-        }, 2000); // Задержка перед переходом
-      });
-    }
-
-    // Обрабатываем клик по ссылкам
-    document.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", function (e) {
-        alert(1);
-        const href = this.getAttribute("href");
-
-        if (href.startsWith(window.location.origin) && !href.includes("#")) {
-          e.preventDefault();
-          showPreloaderAndNavigate(href);
+      window.addEventListener('pageshow', function (event) {
+        if (event.persisted) {
+          preloader.classList.remove("active");
+          animation.stop();
         }
       });
-    });
+
+      const animation = lottie.loadAnimation({
+        container: lottieContainer,
+        renderer: "svg",
+        loop: false,
+        autoplay: false,
+        path: "animation.json"
+      });
+
+      preloader.classList.remove("active");
+      animation.stop();
+
+      function showPreloaderAndNavigate(event) {
+        const href = event.target.getAttribute("href");
+
+        preloader.classList.add("active");
+        animation.play();
+
+      }
+
+      document.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", function (e) {
+          const href = link.getAttribute("href");
+          if (!href.includes("#")) {
+            showPreloaderAndNavigate(e);
+          }
+        });
+      });
     });
   </script>
   <script>
