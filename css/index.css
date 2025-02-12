@@ -1100,7 +1100,7 @@ img {
 }
 
 main {
-  padding-top: 110px;
+  padding-top: 90px;
   padding-bottom: 60px;
 }
 @media (max-width: 767px) {
@@ -1125,15 +1125,6 @@ main h1 {
 
 .page-template-page-genres h1:not(.home-logo) {
   margin: 0 auto;
-}
-
-.library-page main {
-  padding-top: 89px;
-}
-@media (max-width: 767px) {
-  .library-page main {
-    padding-top: 71px;
-  }
 }
 
 .library-page main h1 {
@@ -1412,6 +1403,11 @@ aside {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.modal.comingsoon-popup .modal__content {
+  padding: 0;
+  max-width: 343px;
+  overflow: hidden;
 }
 .modal.dev-popup .modal__text {
   max-width: 356px;
@@ -2004,7 +2000,7 @@ article.banner img {
 }
 
 div.comics .comic-thumbnail img {
-  height: 183;
+  height: 183px;
 }
 @media (min-width: 768px) {
   div.comics .comic-thumbnail img {
@@ -2227,6 +2223,32 @@ div.comics .comic-thumbnail img {
   .error-page__btn:hover::after {
     opacity: 1;
   }
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 9999;
+}
+
+#preloader.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+#lottie-container {
+  width: 200px;
+  height: 200px;
 }
 
 .faq-item {
@@ -2531,6 +2553,11 @@ form input {
   font-weight: 400;
   line-height: 140%;
 }
+@media (max-width: 1250px) {
+  form input {
+    font-size: 16px;
+  }
+}
 form input.error-input {
   border-color: #e90000;
 }
@@ -2554,6 +2581,11 @@ form .inputs-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.modal.comingsoon-popup .modal__content {
+  padding: 0;
+  max-width: 343px;
+  overflow: hidden;
 }
 .modal.dev-popup .modal__text {
   max-width: 356px;
@@ -3203,7 +3235,7 @@ form .inputs-wrapper {
   float: right;
 }
 .single-comics main {
-  padding-top: 82px;
+  padding-top: 88px;
 }
 @media (max-width: 767px) {
   .single-comics main {
@@ -3506,6 +3538,7 @@ form .inputs-wrapper {
 .comic-general__info .comic-general__labels {
   justify-content: space-between;
   align-items: center;
+  margin: 0 0 4px;
 }
 .comic-general__info .views {
   border-radius: 100px;
@@ -3559,7 +3592,7 @@ form .inputs-wrapper {
 .comic-general__add-info {
   display: flex;
   align-items: center;
-  margin: 0;
+  margin: 0 0 4px;
 }
 .comic-general__rating-stars {
   color: #010101;
@@ -3607,12 +3640,12 @@ form .inputs-wrapper {
 }
 .comic-general__info-items {
   display: flex;
+  flex-wrap: wrap;
+  margin: -4px 0 0 -4px;
 }
 .comic-general__info-items .label__item {
   line-height: 20px;
-}
-.comic-general__info-items .label__item + .label__item {
-  margin-left: 4px;
+  margin: 4px 0 0 4px;
 }
 
 .container.comic-list {
@@ -3726,14 +3759,19 @@ form .inputs-wrapper {
 }
 
 .description-wrapper {
-  margin-bottom: 10px;
+  margin-bottom: 14px;
   overflow: hidden;
   color: #010101;
   font-family: "Manrope";
   font-size: 14px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 150%;
+}
+@media (max-width: 767px) {
+  .description-wrapper {
+    margin-bottom: 12px;
+  }
 }
 .description-wrapper p:first-child {
   margin-top: 0;
@@ -3930,12 +3968,6 @@ form .inputs-wrapper {
 .comic-list__item + .comic-list__item {
   margin-top: 6px;
 }
-.comic-list__item--free .comic-list__btn {
-  color: #9d9aa2;
-}
-.comic-list__item--read .comic-list__btn {
-  color: #31d676;
-}
 .comic-list__content {
   display: flex;
   align-items: center;
@@ -3943,6 +3975,8 @@ form .inputs-wrapper {
 .comic-list__img {
   border-radius: 10px;
   overflow: hidden;
+  max-width: 126px;
+  width: 100%;
 }
 .comic-list__img img {
   transition: all 0.3s ease-in-out;
@@ -3971,6 +4005,12 @@ form .inputs-wrapper {
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
+}
+.comic-list__btn.free {
+  color: rgb(56, 170, 126);
+}
+.comic-list__btn.vip {
+  color: rgb(254, 188, 73);
 }
 
 .genres-cus-title {
@@ -4211,6 +4251,19 @@ form .inputs-wrapper {
   display: flex;
   align-items: center;
 }
+.episode-inner__head-box h1 {
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  margin: 0;
+}
+@media (max-width: 767px) {
+  .episode-inner__head-box h1 {
+    font-size: 14px;
+  }
+}
 .episode-inner__back {
   width: 32px;
   height: 32px;
@@ -4244,19 +4297,6 @@ form .inputs-wrapper {
   .episode-inner__title {
     margin-left: 12px;
     flex-wrap: wrap;
-  }
-}
-.episode-inner__name {
-  color: #fff;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 140%;
-  margin: 0;
-}
-@media (max-width: 767px) {
-  .episode-inner__name {
-    font-size: 14px;
   }
 }
 .episode-inner__descr {
@@ -4551,7 +4591,7 @@ form .inputs-wrapper {
 }
 @media (max-width: 1250px) {
   .to-top {
-    bottom: 60px;
+    bottom: 68px;
     right: 15px;
   }
 }
@@ -5903,8 +5943,13 @@ form .inputs-wrapper {
   }
 }
 .home .section .see-all {
-  line-height: 30px;
+  line-height: 38px;
   float: right;
+}
+@media (max-width: 767px) {
+  .home .section .see-all {
+    line-height: 28px;
+  }
 }
 .home .section#discount-40 h2 {
   text-transform: uppercase;
@@ -6078,7 +6123,7 @@ form .inputs-wrapper {
 }
 @media (max-width: 767px) {
   .library__list {
-    padding: -8px 0 0;
+    margin: -8px 0 0;
   }
 }
 .library .comics {
@@ -6258,6 +6303,9 @@ form .inputs-wrapper {
     margin: 4px;
   }
 }
+.comics .comics__bottom-box .comic-list__resume {
+  position: absolute;
+}
 .comics .comic-list__resume {
   padding: 7px 10px;
   display: flex;
@@ -6273,7 +6321,8 @@ form .inputs-wrapper {
   font-weight: 400;
   line-height: 150%;
   margin-top: 0;
-  position: absolute;
+  position: relative;
+  flex-shrink: 0;
 }
 .comics .comic-list__resume svg {
   margin-left: 7px;
@@ -6319,6 +6368,150 @@ form .inputs-wrapper {
   min-width: 100px;
   height: 32px;
   position: relative;
+}
+
+.about-page main h1 {
+  margin-bottom: 20px;
+  line-height: 105%;
+}
+@media (max-width: 767px) {
+  .about-page main h1 {
+    margin-bottom: 10px;
+  }
+}
+.about-page .breadcrumbs {
+  margin-bottom: 24px;
+}
+@media (max-width: 767px) {
+  .about-page .breadcrumbs {
+    margin-bottom: 20px;
+  }
+}
+
+.about {
+  display: flex;
+  align-items: flex-start;
+}
+@media (max-width: 767px) {
+  .about {
+    flex-wrap: wrap;
+  }
+}
+.about__image {
+  margin: 0 0 0 66px;
+}
+@media (min-width: 768px) {
+  .about__image {
+    order: 1;
+    position: relative;
+    top: -70px;
+  }
+}
+@media (max-width: 1250px) {
+  .about__image {
+    margin: 0 0 0 20px;
+  }
+}
+@media (max-width: 767px) {
+  .about__image {
+    margin: 0 auto 10px;
+    max-width: 168px;
+    width: 100%;
+  }
+}
+.about__content {
+  color: #0d0c0c;
+  font-family: "Manrope";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  max-width: 700px;
+  width: 100%;
+}
+.about__content h2 {
+  color: #0D0C0C;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  margin: 0 0 10px;
+  font-family: "Lufga";
+}
+@media (max-width: 767px) {
+  .about__content h2 {
+    font-size: 18px;
+  }
+}
+.about__content h3 {
+  color: #010101;
+  font-family: "Lufga";
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  margin: 0 0 10px;
+}
+.about__content p {
+  margin: 10px 0 20px;
+}
+@media (max-width: 767px) {
+  .about__content p {
+    margin: 10px 0 24px;
+  }
+}
+.about__content p:first-child {
+  margin-top: 0;
+}
+.about__content p:last-child {
+  margin-bottom: 0;
+}
+.about__content ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.about__content ul li {
+  position: relative;
+  padding-left: 14px;
+}
+.about__content ul li::after {
+  content: "";
+  background: #0d0c0c;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  left: 0;
+  top: 9px;
+  position: absolute;
+}
+.about__content ul li + li {
+  margin-top: 10px;
+}
+.about__welcome {
+  margin-bottom: 64px;
+}
+@media (max-width: 767px) {
+  .about__welcome {
+    margin-bottom: 44px;
+  }
+}
+.about__welcome h3 {
+  font-size: 20px;
+}
+@media (max-width: 767px) {
+  .about__welcome h3 {
+    font-size: 18px;
+  }
+}
+.about__mission h3 {
+  font-size: 18px;
+  padding-top: 8px;
+}
+@media (max-width: 767px) {
+  .about__mission h3 {
+    font-size: 16px;
+    padding-top: 0;
+  }
 }
 
 body.load-page {
@@ -6409,6 +6602,7 @@ body.load-page {
   width: 100%;
   font-family: "Lufga";
   font-size: 16px;
+  resize: none;
 }
 .load-comic__field textarea.error {
   border: 1px solid #f00;
@@ -6614,9 +6808,22 @@ body.load-page {
   }
 }
 
+.contacs-page .breadcrumbs {
+  margin-bottom: 34px;
+}
 @media (max-width: 767px) {
-  .contacs-page main {
-    padding-top: 82px;
+  .contacs-page .breadcrumbs {
+    margin-bottom: 20px;
+  }
+}
+
+.contacs-page main h1 {
+  margin-bottom: 24px;
+  line-height: 105%;
+}
+@media (max-width: 767px) {
+  .contacs-page main h1 {
+    line-height: 135%;
   }
 }
 
